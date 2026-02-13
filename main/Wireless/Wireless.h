@@ -1,26 +1,15 @@
 #pragma once
+#include <stdbool.h>
+#include "esp_err.h"
 
-#include "esp_log.h"
-#include "freertos/FreeRTOS.h"
-#include "esp_wifi.h"
-#include "nvs_flash.h" 
-#include "esp_log.h"
+typedef struct {
+    const char *ssid;
+    const char *pass;          // "" if open
+    bool use_static_ip;        // optional but recommended for many ELM WiFi dongles
+    const char *static_ip;     // e.g. "192.168.0.11"
+    const char *gw;            // e.g. "192.168.0.10"
+    const char *netmask;       // e.g. "255.255.255.0"
+} wireless_wifi_cfg_t;
 
-#include <stdio.h>
-#include <string.h>  // For memcpy
-#include "esp_system.h"
-#include "esp_bt.h"
-#include "esp_gap_ble_api.h"
-#include "esp_bt_main.h"
-
-
-
-extern uint16_t BLE_NUM;
-extern uint16_t WIFI_NUM;
-extern bool Scan_finish;
-
-void Wireless_Init(void);
-void WIFI_Init(void *arg);
-uint16_t WIFI_Scan(void);
-void BLE_Init(void *arg);
-uint16_t BLE_Scan(void);
+esp_err_t Wireless_WiFiConnect(const wireless_wifi_cfg_t *cfg);
+bool Wireless_IsConnected(void);
