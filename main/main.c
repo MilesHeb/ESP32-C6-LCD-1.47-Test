@@ -28,7 +28,6 @@ void app_main(void)
 
     while (1)
     {
-        lv_tick_inc(10);
         lv_timer_handler();
         ui_update();
         vTaskDelay(pdMS_TO_TICKS(10));

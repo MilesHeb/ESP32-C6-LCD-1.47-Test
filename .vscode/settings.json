@@ -41,5 +41,6 @@
     "--background-index",
     "--query-driver=**",
     "--compile-commands-dir=c:\\esp\\ESP32-C6-LCD-1.47-Test\\build"
-  ]
+  ],
+  "idf.currentSetup": "C:\\esp\\v5.5.1\\esp-idf"
 }

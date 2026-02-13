@@ -29,14 +29,14 @@
 #define EXAMPLE_PIN_NUM_LCD_RST        21
 #define EXAMPLE_PIN_NUM_BK_LIGHT       22
 // The pixel number in horizontal and vertical
-#define EXAMPLE_LCD_H_RES              172
-#define EXAMPLE_LCD_V_RES              320
+#define EXAMPLE_LCD_H_RES              320
+#define EXAMPLE_LCD_V_RES              172
 // Bit number used to represent command and parameter
 #define EXAMPLE_LCD_CMD_BITS           8
 #define EXAMPLE_LCD_PARAM_BITS         8
 
-#define Offset_X 34
-#define Offset_Y 0
+#define Offset_X 0
+#define Offset_Y 34
 
 
 #define LEDC_HS_TIMER          LEDC_TIMER_0

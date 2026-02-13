@@ -16,17 +16,17 @@ void screen_main_create(void)
     lv_obj_set_flex_flow(root, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_flex_align(
         root,
-        LV_FLEX_ALIGN_START,
+        LV_FLEX_ALIGN_SPACE_BETWEEN,
         LV_FLEX_ALIGN_CENTER,
         LV_FLEX_ALIGN_CENTER
     );
 
-    lv_obj_set_style_pad_all(root, 8, 0);
+    lv_obj_set_style_pad_all(root, 4, 0);
     lv_obj_set_style_border_width(root, 0, 0);
 
     /* ---------- Top bar ---------- */
     lv_obj_t *top = lv_obj_create(root);
-    lv_obj_set_size(top, lv_pct(100), 40);
+    lv_obj_set_size(top, lv_pct(100), 28);
     lv_obj_set_style_radius(top, 8, 0);
     lv_obj_set_style_bg_color(top, lv_palette_main(LV_PALETTE_BLUE), 0);
 
@@ -36,7 +36,11 @@ void screen_main_create(void)
 
     /* ---------- Main card ---------- */
     lv_obj_t *card = lv_obj_create(root);
-    lv_obj_set_size(card, lv_pct(100), 160);
+    lv_obj_set_width(card, lv_pct(100));
+    lv_obj_set_height(card, 0);          /* let flex sizing handle height */
+    lv_obj_set_flex_grow(card, 1);       /* take all remaining vertical space */
+    lv_obj_set_style_pad_all(card, 6, 0);
+
     lv_obj_set_style_radius(card, 12, 0);
     lv_obj_set_style_bg_color(card, lv_palette_main(LV_PALETTE_GREY), 0);
 
