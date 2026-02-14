@@ -10,6 +10,7 @@ idf_component_register(
         "SD_Card/SD_SPI.c"
         "RGB/RGB.c"
         "Wireless/Wireless.c"
+        "OBD/elm327_tcp.c"
 
     INCLUDE_DIRS
         "."

@@ -1,9 +1,9 @@
 #include "elm327_tcp.h"
-#include "lwip/sockets.h"
-#include "lwip/netdb.h"
 
 #include <string.h>
 #include <errno.h>
+#include <sys/socket.h>
+#include <netdb.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/time.h>
